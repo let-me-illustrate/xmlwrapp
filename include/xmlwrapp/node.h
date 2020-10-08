@@ -431,7 +431,7 @@ public:
 
         Note that this is only a forward iterator.
      */
-    class iterator
+    class XMLWRAPP_API iterator
     {
     public:
         typedef node value_type;
@@ -474,7 +474,7 @@ public:
 
         Note that this is only a forward iterator.
      */
-    class const_iterator
+    class XMLWRAPP_API const_iterator
     {
     public:
         typedef const node value_type;
@@ -892,18 +892,14 @@ private:
 
 // Comparison operators for xml::node iterators
 
-inline bool XMLWRAPP_API operator==(const node::iterator& lhs,
-                                    const node::iterator& rhs)
+inline bool operator==(const node::iterator& lhs, const node::iterator& rhs)
     { return lhs.get_raw_node() == rhs.get_raw_node(); }
-inline bool XMLWRAPP_API operator!=(const node::iterator& lhs,
-                                    const node::iterator& rhs)
+inline bool operator!=(const node::iterator& lhs, const node::iterator& rhs)
     { return !(lhs == rhs); }
 
-inline bool XMLWRAPP_API operator==(const node::const_iterator& lhs,
-                                    const node::const_iterator& rhs)
+inline bool operator==(const node::const_iterator& lhs, const node::const_iterator& rhs)
     { return lhs.get_raw_node() == rhs.get_raw_node(); }
-inline bool XMLWRAPP_API operator!=(const node::const_iterator& lhs,
-                                    const node::const_iterator& rhs)
+inline bool operator!=(const node::const_iterator& lhs, const node::const_iterator& rhs)
     { return !(lhs == rhs); }
 
 } // namespace xml
